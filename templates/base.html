@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Экономическое Поволжье</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="/" class="nav-link">На главную</a>
-            <a href="/subjects" class="nav-link">Субъекты</a>
-            <a href="#" class="nav-link">Почему Поволжье?</a>
-            <a href="#" class="nav-link">Экология Волги</a>
-            <a href="#" class="nav-link">Туристические маршруты</a>
+            <a href="{{ url_for('home') }}" class="nav-link">На главную</a>
+            <a href="{{ url_for('subjects') }}" class="nav-link">Субъекты</a>
+            <a href="{{ url_for('why_povolzhye') }}" class="nav-link">Почему Поволжье?</a>
+            <a href="{{ url_for('ecology') }}" class="nav-link">Экология Волги</a>
+            <a href="{{ url_for('tourism') }}" class="nav-link">Туристические маршруты</a>
         </nav>
     </header>
 
@@ -21,4 +21,3 @@
         {% block content %}{% endblock %}
     </main>
 </body>
-</html>
