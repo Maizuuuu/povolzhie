@@ -89,6 +89,20 @@ def subject(subject_id):
         return render_template('subject.html', subject=subject_data)
     else:
         return "Субъект не найден", 404
+@app.route('/why-povolzhye')
+def why_povolzhye():
+    return render_template('why_povolzhye.html')
 
+@app.route('/ecology')
+def ecology():
+    return render_template('ecology.html')
+
+
+@app.route('/tourism')
+def tourism():
+    return render_template('tourism.html')
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=8080, debug=True)
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8080, debug=True)
