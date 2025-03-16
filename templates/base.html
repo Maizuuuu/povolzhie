@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Экономическое Поволжье</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="nav-link">На главную</a>
+            <a href="/subjects" class="nav-link">Субъекты</a>
+            <a href="#" class="nav-link">Почему Поволжье?</a>
+            <a href="#" class="nav-link">Экология Волги</a>
+            <a href="#" class="nav-link">Туристические маршруты</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

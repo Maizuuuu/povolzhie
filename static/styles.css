@@ -1,0 +1,245 @@
+/* Основные стили */
+:root {
+    --primary-blue: #0077b6;
+    --secondary-blue: #90e0ef;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Шапка */
+.header {
+    background: white;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.nav-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--secondary-blue);
+}
+
+/* Главная страница */
+.hero {
+    position: relative;
+    height: 100vh; /* Высота на весь экран */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+
+    filter: brightness(0.6); /* Затемняем изображение для лучшей читаемости текста */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.fact-card {
+    background: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
+    padding: 2rem;
+    border-radius: 10px;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .fact-card {
+        padding: 1rem;
+    }
+}
+@media (max-width: 1200px) {
+    .facts-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 карточки в ряд на экранах меньше 1200px */
+    }
+}
+
+@media (max-width: 768px) {
+    .facts-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряд на экранах меньше 768px */
+    }
+}
+
+@media (max-width: 480px) {
+    .facts-grid {
+        grid-template-columns: 1fr; /* 1 карточка в ряд на экранах меньше 480px */
+    }
+}
+/* Страница субъектов */
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд */
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.subject-card {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.subject-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.subject-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.subject-name {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: var(--background-color);
+}
+@media (max-width: 1200px) {
+    .subjects-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 карточки в ряд на экранах меньше 1200px */
+    }
+}
+
+@media (max-width: 768px) {
+    .subjects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряд на экранах меньше 768px */
+    }
+}
+
+@media (max-width: 480px) {
+    .subjects-grid {
+        grid-template-columns: 1fr; /* 1 карточка в ряд на экранах меньше 480px */
+    }
+}
+
+/* Страница отдельного субъекта */
+.subject-detail {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.subject-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.subject-header-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.subject-header h1 {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subject-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.info-block {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.info-block h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+.info-block p {
+    margin: 0.5
+}

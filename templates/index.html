@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+    <div class="hero-background">
+        <img src="{{ url_for('static', filename='images/main.jpg') }}" 
+             alt="Фон Поволжья" 
+             class="background-image">
+    </div>
+    <div class="hero-content">
+        <h1 class="hero-title">Поволжье - экономический мост России</h1>
+        <div class="facts-grid">
+            <div class="fact-card">
+                <h3>15%</h3>
+                <p>ВВП страны</p>
+            </div>
+            <div class="fact-card">
+                <h3>40%</h3>
+                <p>Сельхозпродукции</p>
+            </div>
+            <div class="fact-card">
+                <h3>500+ км</h3>
+                <p>Судоходных путей</p>
+            </div>
+            <div class="fact-card">
+                <h3>10%</h3>
+                <p>Нефти и газа</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

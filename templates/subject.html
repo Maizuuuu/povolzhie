@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="subject-detail">
+    <div class="subject-header">
+        <img src="{{ url_for('static', filename='images/' + subject[7]) }}" 
+             alt="{{ subject[1] }}" 
+             class="subject-header-image">
+        <h1>{{ subject[1] }}</h1>
+    </div>
+
+    <div class="subject-info">
+        <div class="info-block">
+            <h2>Основная информация</h2>
+            <p><strong>Население:</strong> {{ "{:,}".format(subject[2]).replace(',', ' ') }}</p>
+            <p><strong>Климат:</strong> {{ subject[3] }}</p>
+            <p><strong>Сельское хозяйство:</strong> {{ subject[4] }}</p>
+            <p><strong>Рельеф:</strong> {{ subject[5] }}</p>
+            <p><strong>Площадь:</strong> {{ "{:,}".format(subject[6]).replace(',', ' ') }} км²</p>
+        </div>
+
+        <div class="info-block">
+            <h2>Дополнительно</h2>
+            <p>Здесь можно добавить больше информации о субъекте, например, историю, культуру, экономику и т.д.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

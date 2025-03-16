@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="subjects-grid">
+    {% for subject in subjects %}
+    <a href="{{ url_for('subject', subject_id=subject[0]) }}" class="subject-card">
+        <div class="subject-image-container">
+            <img src="{{ url_for('static', filename='images/' + subject[7]) }}" 
+                 alt="{{ subject[1] }}" 
+                 class="subject-image">
+        </div>
+        <div class="subject-name">
+            {{ subject[1] }}
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
