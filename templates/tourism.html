@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="tourism">
+    <h1>Туристические маршруты</h1>
+    <div class="routes" id="routes">
+        <!-- Маршруты будут добавлены с помощью JavaScript -->
+    </div>
+</div>
+
+<script>
+    const routes = [
+        {
+            name: "Самара",
+            description: "Посетите Жигулёвские горы и набережную Волги.",
+            image: "samara.jpg"
+        },
+        {
+            name: "Казань",
+            description: "Исследуйте Казанский Кремль и мечеть Кул-Шариф.",
+            image: "kazan.jpg"
+        },
+        {
+            name: "Волгоград",
+            description: "Узнайте историю Сталинградской битвы на Мамаевом кургане.",
+            image: "volgograd.jpg"
+        }
+    ];
+
+    const routesContainer = document.getElementById('routes');
+
+    routes.forEach(route => {
+        const routeCard = document.createElement('div');
+        routeCard.className = 'route-card';
+
+        const routeImage = document.createElement('img');
+        routeImage.src = `{{ url_for('static', filename='images/${route.image}') }}`;
+        routeImage.alt = route.name;
+
+        const routeName = document.createElement('h3');
+        routeName.textContent = route.name;
+
+        const routeDescription = document.createElement('p');
+        routeDescription.textContent = route.description;
+
+        routeCard.appendChild(routeImage);
+        routeCard.appendChild(routeName);
+        routeCard.appendChild(routeDescription);
+
+        routesContainer.appendChild(routeCard);
+    });
+</script>
+{% endblock %}
